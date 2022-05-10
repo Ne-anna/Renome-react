@@ -3,18 +3,18 @@
   font-family: "Axis";
   font-style: normal;
   font-weight: 400;
-  src: url("/src/Components/Atoms/Fonts/Axis.woff2") format("woff2");
+  src: url("/public/Fonts/Axis.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Montserrat";
   font-weight: 700;
-  src: url("/src/Components/Atoms/Fonts/Montserrat-Bold.woff2") format("woff2");
+  src: url("/public/Fonts/Montserrat-Bold.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Pacifico";
-  src: url("/src/Components/Atoms/Fonts/Pacifico-Regular.ttf")
+  src: url("/public/Fonts/Pacifico-Regular.ttf")
     format("truetype");
 }
 
