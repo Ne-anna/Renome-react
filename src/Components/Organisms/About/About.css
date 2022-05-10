@@ -1,3 +1,21 @@
+@font-face {
+  font-family: "Axis";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/src/Components/Atoms/Fonts/Axis.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 700;
+  src: url("/src/Components/Atoms/Fonts/Montserrat-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Pacifico";
+  src: url("/src/Components/Atoms/Fonts/Pacifico-Regular.ttf")
+    format("truetype");
+}
 
 :root {
   --brown: #985e5b;
