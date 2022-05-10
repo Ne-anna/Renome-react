@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './About.css';
 
 const About = () => {
     const [article] = useState([
