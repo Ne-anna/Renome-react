@@ -1,0 +1,31 @@
+
+.about__text-container {
+  padding-bottom: 50px;
+}
+
+.about__title {
+  font-family: var(--axis);
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 38px;
+  letter-spacing: 8px;
+  color: var(--coalblack);
+}
+
+.about__subtitle {
+  font-family: var(--montserrat);
+  margin-top: 0;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--brown);
+  text-transform: uppercase;
+}
+
+.about__paragraph {
+  font-family: var(--montserrat);
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 30px;
+  color: var(--grey);
+}
