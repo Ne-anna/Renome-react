@@ -69,9 +69,9 @@
   ],
   "about": {
     "images": {
-      "top": "/Images/about_img_2.png",
+      "top": "Assets/img/about_img_2.png",
       "altTagTop": "white house from afar",
-      "bottom": "/Images/about_img_1.png",
+      "bottom": "assets/img/about_img_1.png",
       "altTagBottom": "close-up second house floor window"
     },
     "title": "About",
