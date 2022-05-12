@@ -1,6 +1,6 @@
 import Grid from './Components/Molecules/grid-image/grid';
 import About from './Components/Organisms/About/About';
-import 'src/app.scss';
+import './app.scss';
 import jsonFile from './db.json';
 
 function App() {
