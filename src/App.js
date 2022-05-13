@@ -17,7 +17,9 @@ function App() {
         <Grid {...images} />
         <About {...articles} />
       </div>
-      <Gallery {...gallery} />
+      <Gallery
+        gallery={gallery}
+      />
       <footer>
         <Footer {...footer} />
       </footer>
