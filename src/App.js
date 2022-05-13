@@ -14,7 +14,9 @@ function App() {
   return (
     <div className="App">
       <div className="about-container">
-        <Grid {...images} />
+        <Grid 
+        images = {images}
+        />
         <About
           articles={articles}
         />
