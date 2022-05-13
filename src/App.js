@@ -23,7 +23,8 @@ function App() {
         gallery={gallery}
       />
       <footer>
-        <Footer {...footer} />
+        <Footer 
+        footer = {footer} />
       </footer>
     </div>
   );
