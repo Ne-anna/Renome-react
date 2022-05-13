@@ -15,7 +15,9 @@ function App() {
     <div className="App">
       <div className="about-container">
         <Grid {...images} />
-        <About {...articles} />
+        <About
+          articles={articles}
+        />
       </div>
       <Gallery
         gallery={gallery}
