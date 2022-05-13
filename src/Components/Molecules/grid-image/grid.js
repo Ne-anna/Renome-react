@@ -3,12 +3,8 @@ import './grid.scss';
 const Grid = (images) => {
     return (
         <div className="about__image-grid">
-            <div className="about__back-container">
-                <img src={images.top} alt={images.altTagTop}/>
-            </div>
-            <div className="about__front-container">
-                <img src={images.bottom} alt={images.altTagBottom}/>
-            </div>
+            <img src={images.top} alt={images.altTagBack} className="about__back-image" />
+            <img src={images.bottom} alt={images.altTagFront} className="about__front-image" />
         </div>
     );
 }

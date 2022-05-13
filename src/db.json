@@ -70,9 +70,9 @@
   "about": {
     "images": {
       "top": "Assets/img/about_img_2.png",
-      "altTagTop": "white house from afar",
+      "altTagBack": "white house from afar",
       "bottom": "assets/img/about_img_1.png",
-      "altTagBottom": "close-up second house floor window"
+      "altTagFront": "close-up second house floor window"
     },
     "title": "About",
     "subTitle": "we create delicious memories",
