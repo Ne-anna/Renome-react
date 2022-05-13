@@ -101,5 +101,27 @@
         "path": "/assets/img/gallery_img_6.png"
       }
     ]
+  },
+  "footer": {
+    "title": "Follow us:",
+    "footerIcons": [
+      {
+        "id": 1,
+        "icon": "/assets/icons/icon-facebook.svg",
+        "altTag": "facebook icon"
+      },
+      {
+        "id": 2,
+        "icon": "/assets/icons/icon-twitter.svg",
+        "altTag": "twitter icon"
+      },
+      {
+        "id": 3,
+        "icon": "/assets/icons/icon-google.svg",
+        "altTag": "facebook icon"
+      }
+    ],
+    "logo": "Renome",
+    "copyright": "Copyright 2022 renome by estetiq"
   }
 }
