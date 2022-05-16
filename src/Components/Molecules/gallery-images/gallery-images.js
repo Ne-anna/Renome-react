@@ -6,9 +6,9 @@ const GalleryImages = () => {
     return (
         <div className="gallery__image-container">
             {
-                GalleryImages.map(post => {
+                GalleryImages.map((post,index ) => {
                     return (
-                        <img src={post.path} alt={post.altTag} key={post.id}/>
+                        <img src={post.path} alt={post.altTag} key={index}/>
                     )
                 })
             }
