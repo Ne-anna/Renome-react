@@ -1,4 +1,17 @@
 {
+  "navigation": {
+    "logo": "Renome",
+    "navigationIcons": [
+      {
+        "cart": "/assets/icons/cart.svg",
+        "altTag": "cart icon"
+      },
+      {
+        "divider": "/assets/icons/divider.svg",
+        "altTag": "divider icon"
+      }
+    ]
+  },
   "menu": [
     {
       "title": "Search"
@@ -87,11 +100,11 @@
         "path": "/assets/img/gallery_img_1.png"
       },
       {
-        "altTag":"inside of cafe with tables",
+        "altTag": "inside of cafe with tables",
         "path": "/assets/img/gallery_img_3.png"
       },
       {
-        "altTag":"historical brick house with windows",
+        "altTag": "historical brick house with windows",
         "path": "/assets/img/gallery_img_2.png"
       },
       {
