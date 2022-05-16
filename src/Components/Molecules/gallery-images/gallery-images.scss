@@ -1,0 +1,13 @@
+@import "../../../index.scss";
+
+.gallery__image-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  gap: 10px;
+
+  img {
+    width: 45%;
+  }
+}

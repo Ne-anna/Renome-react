@@ -83,22 +83,28 @@
     "subTitle": "More about us via photos",
     "galleryImages": [
       {
+        "altTag": "cafe entrance",
         "path": "/assets/img/gallery_img_1.png"
       },
       {
-        "path": "/assets/img/gallery_img_2.png"
-      },
-      {
+        "altTag":"inside of cafe with tables",
         "path": "/assets/img/gallery_img_3.png"
       },
       {
-        "path": "/assets/img/gallery_img_4.png"
+        "altTag":"historical brick house with windows",
+        "path": "/assets/img/gallery_img_2.png"
       },
       {
+        "altTag": "fried cottage cheese balls",
+        "path": "/assets/img/gallery_img_6.png"
+      },
+      {
+        "altTag": "bowl with salad",
         "path": "/assets/img/gallery_img_5.png"
       },
       {
-        "path": "/assets/img/gallery_img_6.png"
+        "altTag": "sidewalk cafe menu board",
+        "path": "/assets/img/gallery_img_4.png"
       }
     ]
   },

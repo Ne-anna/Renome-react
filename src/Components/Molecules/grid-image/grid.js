@@ -1,10 +1,10 @@
 import './grid.scss';
 
-const Grid = (images) => {
+const Grid = (props) => {
     return (
         <div className="about__image-grid">
-            <img src={images.top} alt={images.altTagBack} className="about__back-image" />
-            <img src={images.bottom} alt={images.altTagFront} className="about__front-image" />
+            <img src={props.images.top} alt={props.images.altTagBack} className="about__back-image" />
+            <img src={props.images.bottom} alt={props.images.altTagFront} className="about__front-image" />
         </div>
     );
 }
