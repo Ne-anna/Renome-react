@@ -8,7 +8,7 @@ const GalleryImages = () => {
             {
                 GalleryImages.map(post => {
                     return (
-                        <img className='gallery__image' src={post.path} alt={post.altTag}/>
+                        <img src={post.path} alt={post.altTag} key={post.altTag}/>
                     )
                 })
             }
