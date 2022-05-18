@@ -1,16 +1,11 @@
 {
   "navigation": {
     "logo": "Renome",
-    "navigationIcons": [
-      {
-        "cart": "/assets/icons/cart.svg",
-        "altTag": "cart icon"
-      },
-      {
-        "divider": "/assets/icons/divider.svg",
-        "altTag": "divider icon"
-      }
-    ]
+    "cart": "/assets/icons/icon-cart.svg",
+    "altTagCart": "cart icon",
+    "count": "2",
+    "divider": "/assets/icons/icon-divider.svg",
+    "altTagDivider": "divider icon"
   },
   "menu": [
     {
@@ -82,7 +77,7 @@
   ],
   "about": {
     "images": {
-      "top": "Assets/img/about_img_2.png",
+      "top": "/assets/img/about_img_2.png",
       "altTagBack": "white house from afar",
       "bottom": "assets/img/about_img_1.png",
       "altTagFront": "close-up second house floor window"
