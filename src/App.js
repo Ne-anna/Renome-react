@@ -1,3 +1,4 @@
+import Navigation from './Components/Organisms/Navigation/navigation';
 import Grid from './Components/Molecules/grid-image/grid';
 import About from './Components/Organisms/About/About';
 import Gallery from './Components/Organisms/Gallery/gallery';
@@ -13,9 +14,13 @@ function App() {
 
   return (
     <div className="App">
+      <header>
+        <Navigation
+        />
+      </header>
       <div className="about-container">
-        <Grid 
-        images = {images}
+        <Grid
+          images={images}
         />
         <About
           articles={articles}
@@ -25,8 +30,8 @@ function App() {
         gallery={gallery}
       />
       <footer>
-        <Footer 
-        footer = {footer} />
+        <Footer
+          footer={footer} />
       </footer>
     </div>
   );
