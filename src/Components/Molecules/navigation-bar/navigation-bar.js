@@ -1,6 +1,6 @@
 import './navigation-bar.scss';
 import jsonFile from 'src/db.json';
-import Hamburger from 'src/Components/Atoms/buttons/hamburger';
+import Hamburger from 'src/Components/Atoms/buttons/hamburger-button/hamburger';
 
 const NavigationBar = () => {
     const navigation = jsonFile.navigation;

@@ -1,7 +1,7 @@
 import './menu.scss';
 import jsonFile from 'src/db.json';
-import FeaturesNext from 'src/Components/Atoms/buttons/features-next';
-import Search from 'src/Components/Atoms/buttons/search-button';
+import FeaturesNext from 'src/Components/Atoms/buttons/features-next-button/features-next';
+import Search from 'src/Components/Atoms/buttons/search-button/search-button';
 
 const Menu = () => {
     const menu = jsonFile.menu;
