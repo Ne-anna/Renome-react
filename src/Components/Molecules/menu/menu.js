@@ -8,6 +8,10 @@ import SubMenu from '../sub-menu.js/sub-menu';
 const Menu = () => {
     const [isClicked, setIsClicked] = useState(false);
 
+    const openSubMenu = () => {
+        setIsClicked(!isClicked)
+    }
+
     const menu = jsonFile.menu;
 
     return (
@@ -18,7 +22,7 @@ const Menu = () => {
                         <li className={`navigation__item ${post.isSubMenu ? 'navigation__item--features' : post.title === "Search" ? 'navigation__item--search' : ''}`} key={index}>
                             {post.title === "Search" ? <><input className='navigation__input--search' placeholder={post.title} /> <Search /> </> : <a className='navigation__link' href={post.url}>{post.title}</a>}
                             {post.isSubMenu &&
-                                <div onClick={() => setIsClicked(!isClicked)} >
+                                <div onClick={openSubMenu} >
                                     <FeaturesNext />
                                 </div>
                             }
