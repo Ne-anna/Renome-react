@@ -4,13 +4,14 @@ import './sub-menu.scss';
 
 const SubMenu = (props) => {
     const menu = jsonFile.menu;
+    const back = jsonFile.wordBack;
 
     return (
         <div className="sub-navigation">
             <div className="sub-navigation__item--back">
                 <div onClick={props.subMenuClose}> <SubMenuBack /></div>
 
-                <p className="sub-navigation__text--back" onClick={props.subMenuClose}>Back</p>
+                <p className="sub-navigation__text--back" onClick={props.subMenuClose}>{back.back}</p>
             </div>
             {
                 menu.map((post => {

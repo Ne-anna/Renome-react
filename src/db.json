@@ -9,7 +9,6 @@
     {
       "item": "Checkout"
     }
-    
   ],
   "navigation": {
     "logo": "Renome",
@@ -67,6 +66,9 @@
       "url": "#"
     }
   ],
+  "wordBack": {
+    "back": "back"
+  },
   "carousel": [
     {
       "title": "Made with love",
