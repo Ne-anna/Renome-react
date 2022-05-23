@@ -1,4 +1,16 @@
 {
+  "cart": [
+    {
+      "item": "$ 44.50"
+    },
+    {
+      "item": "View Cart"
+    },
+    {
+      "item": "Checkout"
+    }
+    
+  ],
   "navigation": {
     "logo": "Renome",
     "cart": "/assets/icons/icon-cart.svg",
