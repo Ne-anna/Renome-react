@@ -1,7 +1,7 @@
 @import "../../../index.scss";
 
 .sub-navigation {
-  // position: absolute;
+  position: absolute;
   display: flex;
   flex-direction: column;
   list-style-type: none;
@@ -12,7 +12,15 @@
   right: 0;
   top: 48px;
   width: 100%;
-  right: 100%;
+
+  &__item--back{
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    padding-top: 20px;
+  }
 
   &__item{
     width: 100%;
@@ -36,8 +44,12 @@
       color: $brown;
     } 
   }
-}
 
-// .sub-navigation.active {
-//   right: 0;
-// }
+  &__text--back{
+    margin-right: 25px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: $montserrat;
+    color: $black;
+  }
+}
