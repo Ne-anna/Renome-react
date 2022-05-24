@@ -12,7 +12,9 @@ const SubMenu = (props) => {
                 <div onClick={props.subMenuClose}>
                     <SubMenuBack />
                 </div>
-                <p className="sub-navigation__text--back" onClick={props.subMenuClose}>{back.title}</p>
+                <p className="sub-navigation__text--back" onClick={props.subMenuClose}>
+                    {back.title}
+                </p>
             </div>
             {
                 menu.map((post => {
@@ -22,7 +24,9 @@ const SubMenu = (props) => {
                                 {
                                     post.subMenu.map((post) =>
                                         <div className='sub-navigation__item'>
-                                            <p className="sub-navigation__text"> {post.title} </p>
+                                            <p className="sub-navigation__text">
+                                                {post.title}
+                                            </p>
                                         </div>)
                                 }
                             </>
