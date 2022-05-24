@@ -1,4 +1,23 @@
 {
+  "cart": [
+    {
+      "item": "$ 44.50"
+    },
+    {
+      "item": "View Cart"
+    },
+    {
+      "item": "Checkout"
+    }
+  ],
+  "navigation": {
+    "logo": "Renome",
+    "cartPath": "/assets/icons/icon-cart.svg",
+    "altTagCart": "cart icon",
+    "count": "2",
+    "dividerPath": "/assets/icons/icon-divider.svg",
+    "altTagDivider": "divider icon"
+  },
   "menu": [
     {
       "title": "Search"
@@ -47,6 +66,9 @@
       "url": "#"
     }
   ],
+  "backButtonTitle": {
+    "title": "back"
+  },
   "carousel": [
     {
       "title": "Made with love",
@@ -69,9 +91,9 @@
   ],
   "about": {
     "images": {
-      "top": "Assets/img/about_img_2.png",
+      "top": "/assets/img/about_img_2.png",
       "altTagBack": "white house from afar",
-      "bottom": "assets/img/about_img_1.png",
+      "bottom": "/assets/img/about_img_1.png",
       "altTagFront": "close-up second house floor window"
     },
     "title": "About",
@@ -87,11 +109,11 @@
         "path": "/assets/img/gallery_img_1.png"
       },
       {
-        "altTag":"inside of cafe with tables",
+        "altTag": "inside of cafe with tables",
         "path": "/assets/img/gallery_img_3.png"
       },
       {
-        "altTag":"historical brick house with windows",
+        "altTag": "historical brick house with windows",
         "path": "/assets/img/gallery_img_2.png"
       },
       {
