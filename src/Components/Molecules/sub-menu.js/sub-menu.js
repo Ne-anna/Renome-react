@@ -4,7 +4,7 @@ import './sub-menu.scss';
 
 const SubMenu = (props) => {
     const menu = jsonFile.menu;
-    const back = jsonFile.backButtonTitle;
+    const backButton = jsonFile.backButtonTitle;
 
     return (
         <div className="sub-navigation">
@@ -13,7 +13,7 @@ const SubMenu = (props) => {
                     <SubMenuBack />
                 </div>
                 <p className="sub-navigation__text--back" onClick={props.subMenuClose}>
-                    {back.title}
+                    {backButton.title}
                 </p>
             </div>
             {
