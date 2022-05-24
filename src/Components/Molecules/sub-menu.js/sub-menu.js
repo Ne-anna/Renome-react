@@ -1,6 +1,6 @@
-import jsonFile from 'src/db.json';
-import SubMenuBack from 'src/Components/Atoms/buttons/submenu-back-button/submenu-back';
-import './sub-menu.scss';
+import jsonFile from "src/db.json";
+import SubMenuBack from "src/Components/Atoms/buttons/submenu-back-button/submenu-back";
+import "./sub-menu.scss";
 
 const SubMenu = (props) => {
     const menu = jsonFile.menu;
@@ -16,26 +16,21 @@ const SubMenu = (props) => {
                     {backButton.title}
                 </p>
             </div>
-            {
-                menu.map((post => {
-                    return (
-                        (typeof (post.subMenu) == 'object') ?
-                            <>
-                                {
-                                    post.subMenu.map((post) =>
-                                        <div className='sub-navigation__item'>
-                                            <p className="sub-navigation__text">
-                                                {post.title}
-                                            </p>
-                                        </div>)
-                                }
-                            </>
-                            : null
-                    )
-                }))
-            }
+            {menu.map((post) => {
+                return typeof post.subMenu == "object" ? (
+                    <>
+                        {post.subMenu.map((post) => (
+                            <div className="sub-navigation__item">
+                                <p className="sub-navigation__text">
+                                    {post.title}
+                                </p>
+                            </div>
+                        ))}
+                    </>
+                ) : null;
+            })}
         </div>
     );
-}
+};
 
 export default SubMenu;
