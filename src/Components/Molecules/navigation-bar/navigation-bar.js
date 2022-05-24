@@ -26,10 +26,14 @@ const NavigationBar = () => {
 
     return (
         <nav>
-            <h2 className="navigation--left">{navigation.logo}</h2>
-            <div  className="navigation--right">
+            <h2 className="navigation--left">
+                {navigation.logo}
+            </h2>
+            <div className="navigation--right">
                 <img ref={cartRef} className="navigation__cart" src={navigation.cartPath} alt={navigation.altTagCart} onClick={openCart} />
-                <p className="navigation__count">{navigation.count}</p>
+                <p className="navigation__count">
+                    {navigation.count}
+                </p>
                 <img className="navigation__divide" src={navigation.dividerPath} alt={navigation.altTagDivider} />
                 <Hamburger />
                 {isopenCart && (
