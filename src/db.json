@@ -93,7 +93,7 @@
     "images": {
       "top": "/assets/img/about_img_2.png",
       "altTagBack": "white house from afar",
-      "bottom": "assets/img/about_img_1.png",
+      "bottom": "/assets/img/about_img_1.png",
       "altTagFront": "close-up second house floor window"
     },
     "title": "About",
