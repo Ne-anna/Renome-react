@@ -15,8 +15,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <Navigation
-        />
+        <Navigation/>
       </header>
       <div className="about-container">
         <Grid
