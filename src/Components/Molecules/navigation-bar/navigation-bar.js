@@ -28,9 +28,9 @@ const NavigationBar = () => {
         <nav>
             <h2 className="navigation--left">{navigation.logo}</h2>
             <div  className="navigation--right">
-                <img ref={cartRef} className="navigation__cart" src={navigation.cart} alt={navigation.altTagCart} onClick={openCart} />
+                <img ref={cartRef} className="navigation__cart" src={navigation.cartPath} alt={navigation.altTagCart} onClick={openCart} />
                 <p className="navigation__count">{navigation.count}</p>
-                <img className="navigation__divide" src={navigation.divider} alt={navigation.altTagDivider} />
+                <img className="navigation__divide" src={navigation.dividerPath} alt={navigation.altTagDivider} />
                 <Hamburger />
                 {isopenCart && (
                     <CartDropDown />

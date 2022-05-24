@@ -12,10 +12,10 @@
   ],
   "navigation": {
     "logo": "Renome",
-    "cart": "/assets/icons/icon-cart.svg",
+    "cartPath": "/assets/icons/icon-cart.svg",
     "altTagCart": "cart icon",
     "count": "2",
-    "divider": "/assets/icons/icon-divider.svg",
+    "dividerPath": "/assets/icons/icon-divider.svg",
     "altTagDivider": "divider icon"
   },
   "menu": [
@@ -66,8 +66,8 @@
       "url": "#"
     }
   ],
-  "wordBack": {
-    "back": "back"
+  "backButtonTitle": {
+    "title": "back"
   },
   "carousel": [
     {
