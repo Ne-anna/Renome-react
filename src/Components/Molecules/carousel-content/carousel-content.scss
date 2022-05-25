@@ -1,0 +1,36 @@
+@import "../../../index.scss";
+
+.carousel__item {
+  position: absolute;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.carousel__text {
+  position: absolute;
+  bottom: 170px;
+}
+
+.carousel__title {
+  font-family: $axis;
+  color: $white;
+  margin: 0;
+  margin-left: 22px;
+  font-size: 28px;
+  letter-spacing: 3px;
+}
+.carousel__subtitle {
+  font-family: $montserrat;
+  color: $brown;
+  margin-top: 10px;
+  margin-left: 22px;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.carousel__image {
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
