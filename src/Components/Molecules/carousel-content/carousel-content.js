@@ -1,13 +1,14 @@
 import jsonFile from "src/db.json";
 import "./carousel-content.scss";
+
 const CarouselComponent = () => {
   const carousel = jsonFile.carousel;
 
   return (
     <div className="carousel__container">
-      {carousel.map((post) => {
+      {carousel.map((post, index) => {
         return (
-          <div className="carousel__item">
+          <div className="carousel__item" key={index}>
             <div className="carousel__text">
               <h2 className="carousel__title">
                 {post.title}
