@@ -9,8 +9,12 @@ const CarouselComponent = () => {
         return (
           <div className="carousel__item">
             <div className="carousel__text">
-              <h2 className="carousel__title">{post.title}</h2>
-              <h5 className="carousel__subtitle">{post.subTitle}</h5>
+              <h2 className="carousel__title">
+                {post.title}
+              </h2>
+              <h5 className="carousel__subtitle">
+                {post.subTitle}
+              </h5>
             </div>
             <div className="carousel__image">
               <img src={post.path} alt={post.altTag} />
