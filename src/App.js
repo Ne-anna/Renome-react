@@ -1,4 +1,5 @@
 import Navigation from "./Components/Organisms/Navigation/navigation";
+import Carousel from "./Components/Organisms/Carousel/carousel";
 import About from "./Components/Organisms/About/About";
 import Gallery from "./Components/Organisms/Gallery/gallery";
 import Footer from "./Components/Organisms/Footer/footer";
@@ -15,6 +16,7 @@ function App() {
       <header>
         <Navigation />
       </header>
+      <Carousel />
       <About articles={articles} />
       <Gallery gallery={gallery} />
       <footer>
