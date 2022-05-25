@@ -1,5 +1,11 @@
 @import "../../../index.scss";
 
+.about-container {
+  display: flex;
+  padding: 0 9px;
+  flex-direction: column;
+}
+
 .about {
   padding-bottom: 50px;
 
