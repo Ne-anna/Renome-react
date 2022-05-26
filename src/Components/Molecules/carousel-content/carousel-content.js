@@ -6,8 +6,8 @@ const CarouselComponent = ({ carousel, slideIndex }) => {
     <div className={"carousel__container"}>
       {carousel.map((post, index) => {
         return (
-          <div className={slideIndex === index ? "" : "carousel__item"} key={index}>
-            <div className="carousel__text">
+          <div className={slideIndex === index + 1 ? "carousel__item--active" : "carousel__item"} key={index}>
+            <div className={slideIndex === index + 1 ? "carousel__text--active " : "carousel__text"}>
               <h2 className="carousel__title">
                 {post.title}
               </h2>

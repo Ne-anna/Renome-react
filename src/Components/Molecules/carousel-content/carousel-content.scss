@@ -4,9 +4,23 @@
   position: absolute;
   width: 100%;
   margin-top: 50px;
+  opacity: 0;
+  // animation: slideToRight 3s;
+}
+
+.carousel__item--active {
+  display: block;
+  z-index: 1;
+  // animation: fadeVisibilityRight 3s;
 }
 
 .carousel__text {
+  position: absolute;
+  bottom: 170px;
+  opacity: 0;
+}
+
+.carousel__text--active {
   position: absolute;
   bottom: 170px;
 }
