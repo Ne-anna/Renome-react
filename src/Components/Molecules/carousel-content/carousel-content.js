@@ -1,13 +1,21 @@
 import "./carousel-content.scss";
 
-const CarouselComponent = ({ carousel, slideIndex }) => {
+const CarouselComponent = ({ carousel, slideIndex, moveToLeft, moveToRight }) => {
 
   return (
     <div className={"carousel__container"}>
       {carousel.map((post, index) => {
         return (
-          <div className={slideIndex === index + 1 ? "carousel__item--active" : "carousel__item"} key={index}>
-            <div className={slideIndex === index + 1 ? "carousel__text--active " : "carousel__text"}>
+          <div className={`carousel__item ${slideIndex === index + 1
+            // ? moveToRight : "active" ? moveToLeft : "active-left"
+            ? "active"
+            : ""
+            } `}
+            key={index}>
+            <div className={` ${slideIndex === index + 1
+              ? "text--active "
+              : "carousel__text"
+              }`}>
               <h2 className="carousel__title">
                 {post.title}
               </h2>
