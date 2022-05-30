@@ -1,3 +1,4 @@
+import React from 'react';
 import './submenu-back.scss'
 
 const SubMenuBack = () => {
@@ -7,5 +8,5 @@ const SubMenuBack = () => {
         </button>
     );
 }
- 
+
 export default SubMenuBack;

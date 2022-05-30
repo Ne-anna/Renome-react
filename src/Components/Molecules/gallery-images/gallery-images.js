@@ -1,3 +1,4 @@
+import React from 'react';
 import jsonFIle from 'src/db.json';
 import './gallery-images.scss'
 const GalleryImages = () => {
@@ -6,9 +7,9 @@ const GalleryImages = () => {
     return (
         <div className="gallery__image-container">
             {
-                GalleryImages.map((post,index ) => {
+                GalleryImages.map((post, index) => {
                     return (
-                        <img src={post.path} alt={post.altTag} key={index}/>
+                        <img src={post.path} alt={post.altTag} key={index} />
                     )
                 })
             }

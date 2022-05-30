@@ -1,5 +1,6 @@
 import FooterIcons from 'src/Components/Molecules/footer-icons/footer-icons';
 import '../Footer/footer.scss';
+import React from 'react';
 
 const Footer = (props) => {
     return (

@@ -1,3 +1,4 @@
+import React from 'react';
 import jsonFile from "src/db.json";
 import "./cart-drop-down.scss";
 

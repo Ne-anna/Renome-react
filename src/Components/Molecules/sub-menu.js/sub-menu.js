@@ -1,3 +1,4 @@
+import React from 'react';
 import jsonFile from "src/db.json";
 import SubMenuBack from "src/Components/Atoms/buttons/submenu-back-button/submenu-back";
 import "./sub-menu.scss";
