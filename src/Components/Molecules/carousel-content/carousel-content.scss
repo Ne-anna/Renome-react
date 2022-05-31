@@ -21,17 +21,8 @@
   }
 }
 
-@keyframes textFadeRight {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-  }
-}
-
 @keyframes slideToRight {
   0% {
-    opacity: 1;
     left: 0%;
   }
   100% {
@@ -40,35 +31,49 @@
   }
 }
 
+@keyframes slideToLeft {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: -100%;
+  }
+}
+
 .carousel__item {
   position: absolute;
   width: 100%;
-  opacity: 0;
-  animation: slideToRight 1s;
+  opacity: 1;
 }
 
-.active {
+.carousel__item--right {
+  animation: slideToRight 2s;
+}
+
+.carousel__item--left {
+  animation: slideToLeft 2s;
+}
+
+.active-right {
   opacity: 1;
   display: block;
   z-index: 1;
-  animation: fadeVisibilityRight 1s;
+  animation: fadeVisibilityRight 2s;
 }
 
 .active-left {
   opacity: 1;
   display: block;
   z-index: 1;
-  animation: fadeVisibilityLeft 1s;
+  animation: fadeVisibilityLeft 2s;
 }
 
 .carousel__text {
   @include text;
-  opacity: 0;
 }
 
 .text--active {
   @include text;
-  animation: textFadeRight 2s;
 }
 
 .carousel__title {

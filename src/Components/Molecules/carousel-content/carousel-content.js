@@ -1,19 +1,18 @@
 import "./carousel-content.scss";
 
-const CarouselComponent = ({ carousel, slideIndex, moveToLeft, moveToRight }) => {
+const CarouselComponent = ({ carousel, slideIndex, slideRight }) => {
 
   return (
     <div className={"carousel__container"}>
       {carousel.map((post, index) => {
         return (
           <div className={`carousel__item ${slideIndex === index + 1
-            // ? moveToRight : "active" ? moveToLeft : "active-left"
-            ? "active"
-            : ""
+            ? slideRight ? "active-right" : "active-left"
+            : slideRight ? "carousel__item--right" : "carousel__item--left "
             } `}
             key={index}>
             <div className={` ${slideIndex === index + 1
-              ? "text--active "
+              ? "text--active"
               : "carousel__text"
               }`}>
               <h2 className="carousel__title">
@@ -29,7 +28,7 @@ const CarouselComponent = ({ carousel, slideIndex, moveToLeft, moveToRight }) =>
           </div>
         );
       })}
-    </div>
+    </div >
   );
 };
 
