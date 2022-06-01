@@ -11,10 +11,7 @@ const CarouselComponent = ({ carousel, slideIndex, slideRight }) => {
             : slideRight ? "carousel__item--right" : "carousel__item--left "
             } `}
             key={index}>
-            <div className={` ${slideIndex === index + 1
-              ? "text--active"
-              : "carousel__text"
-              }`}>
+            <div className="carousel__text" >
               <h2 className="carousel__title">
                 {post.title}
               </h2>

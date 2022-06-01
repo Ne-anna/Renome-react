@@ -48,10 +48,12 @@
 
 .carousel__item--right {
   animation: slideToRight 2s;
+  left: -100%;
 }
 
 .carousel__item--left {
   animation: slideToLeft 2s;
+  right: -100%;
 }
 
 .active-right {
@@ -69,10 +71,6 @@
 }
 
 .carousel__text {
-  @include text;
-}
-
-.text--active {
   @include text;
 }
 
