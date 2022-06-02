@@ -1,14 +1,14 @@
 import "./carousel-content.scss";
 
-const CarouselComponent = ({ carousel, slideIndex, slideRight }) => {
+const CarouselComponent = ({ carousel, slideIndex, slideDirection, prevSlide, blockAnimation }) => {
 
   return (
     <div className={"carousel__container"}>
       {carousel.map((post, index) => {
         return (
           <div className={`carousel__item ${slideIndex === index + 1
-            ? slideRight ? "active-right" : "active-left"
-            : slideRight ? "carousel__item--right" : "carousel__item--left "
+            ? "active-" + slideDirection
+            : prevSlide === index + 1 ? "carousel__item--" + slideDirection : ""
             } `}
             key={index}>
             <div className="carousel__text" >

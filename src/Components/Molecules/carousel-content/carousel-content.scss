@@ -26,7 +26,6 @@
     left: 0%;
   }
   100% {
-    opacity: 1;
     left: -100%;
   }
 }
@@ -42,17 +41,20 @@
 
 .carousel__item {
   position: absolute;
+  display: none;
   width: 100%;
   opacity: 1;
 }
 
 .carousel__item--right {
   animation: slideToRight 2s;
+  display: block;
   left: -100%;
 }
 
 .carousel__item--left {
   animation: slideToLeft 2s;
+  display: block;
   right: -100%;
 }
 

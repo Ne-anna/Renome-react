@@ -9,30 +9,38 @@ const Carousel = () => {
   const carousel = jsonFile.carousel;
 
   const [slideIndex, setSlideIndex] = useState(1)
-  const [slideRight, setSlideRight] = useState(true)
+  const [slideDirection, setSlideDirection] = useState("right")
+  const [prevSlide, setPrevSlide] = useState(carousel.length)
+  const [blockedAnimation, setBlockedAnimation] = useState(false)
 
   const nextSlide = () => {
-    setSlideRight(true)
+    setSlideDirection("right")
+    setBlockedAnimation(true)
     if (slideIndex !== carousel.length) {
       setSlideIndex(slideIndex + 1)
+      setPrevSlide(slideIndex)
     } else if (slideIndex === carousel.length) {
       setSlideIndex(1)
+      setPrevSlide(carousel.length)
     }
   }
 
   const previousSlide = () => {
-    setSlideRight(false)
+    setSlideDirection("left")
+    setBlockedAnimation(true)
     if (slideIndex !== 1) {
       setSlideIndex(slideIndex - 1)
+      setPrevSlide(slideIndex)
     } else if (slideIndex === 1) {
       setSlideIndex(carousel.length)
+      setPrevSlide(1)
     }
   }
 
   return (
     <div className="carousel">
       <div className="carousel__slider">
-        <CarouselComponent carousel={carousel} slideIndex={slideIndex} slideRight={slideRight} />
+        <CarouselComponent carousel={carousel} prevSlide={prevSlide} slideIndex={slideIndex} slideDirection={slideDirection} blockAnimation={blockedAnimation} />
       </div>
       <div className="carousel__navigation">
         <CarouselPreviousButton moveSlide={previousSlide} />
