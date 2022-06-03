@@ -39,10 +39,18 @@
   }
 }
 
+.carousel__animation--blocked {
+  z-index: 2;
+  animation: unset;
+}
+
+.carousel__animation--active {
+  display: none;
+}
+
 .carousel__item {
   position: absolute;
   width: 100%;
-  display: none;
   opacity: 1;
 }
 

@@ -1,14 +1,16 @@
 import "./carousel-content.scss";
 
 const CarouselComponent = ({ carousel, slideIndex, slideDirection, prevSlide, blockAnimation }) => {
-  console.log(blockAnimation)
+  // console.log(blockAnimation)
   return (
     <div className={"carousel__container"}>
       {carousel.map((post, index) => {
         return (
-          <div className={`carousel__item ${slideIndex === index + 1
+
+          <div className={`carousel__item ${index < 1 && blockAnimation ? "carousel__animation--blocked" :
+            slideIndex === index + 1
               ? "active-" + slideDirection
-              : prevSlide === index + 1 ? "carousel__item--" + slideDirection : ""
+              : prevSlide === index + 1 ? "carousel__item--" + slideDirection : "carousel__animation--active"
             } `}
             key={index}>
             <div className="carousel__text" >
