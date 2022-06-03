@@ -1,14 +1,87 @@
 @import "../../../index.scss";
 
+@mixin text {
+  position: absolute;
+  bottom: 170px;
+}
+
+@keyframes fadeVisibilityRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+  }
+}
+
+@keyframes fadeVisibilityLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+  }
+}
+
+@keyframes slideToRight {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes slideToLeft {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: -100%;
+  }
+}
+
+.carousel__animation--blocked {
+  z-index: 2;
+  animation: unset;
+}
+
+.carousel__animation--active {
+  display: none;
+}
+
 .carousel__item {
   position: absolute;
   width: 100%;
-  margin-top: 50px;
+  opacity: 1;
+}
+
+.carousel__item--right {
+  animation: slideToRight 2s;
+  display: block;
+  left: -100%;
+}
+
+.carousel__item--left {
+  animation: slideToLeft 2s;
+  display: block;
+  right: -100%;
+}
+
+.active-right {
+  opacity: 1;
+  display: block;
+  z-index: 1;
+  animation: fadeVisibilityRight 2s;
+}
+
+.active-left {
+  opacity: 1;
+  display: block;
+  z-index: 1;
+  animation: fadeVisibilityLeft 2s;
 }
 
 .carousel__text {
-  position: absolute;
-  bottom: 170px;
+  @include text;
 }
 
 .carousel__title {

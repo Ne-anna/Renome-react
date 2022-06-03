@@ -1,3 +1,4 @@
+import React from 'react';
 import "./menu.scss";
 import jsonFile from "src/db.json";
 import FeaturesNext from "src/Components/Atoms/buttons/features-next-button/features-next";
@@ -12,10 +13,10 @@ const Menu = (props) => {
                 return (
                     <li
                         className={`navigation__item ${post.isSubMenu
-                                ? "navigation__item--features"
-                                : post.title === "Search"
-                                    ? "navigation__item--search"
-                                    : ""
+                            ? "navigation__item--features"
+                            : post.title === "Search"
+                                ? "navigation__item--search"
+                                : ""
                             }`}
                         key={index}
                     >

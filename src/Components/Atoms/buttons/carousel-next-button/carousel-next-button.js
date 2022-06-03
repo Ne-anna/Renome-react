@@ -1,8 +1,9 @@
+import React from 'react';
 import './carousel-next-button.scss';
 
-const CarouselNextButton = () => {
+const CarouselNextButton = ({ moveSlide }) => {
   return (
-    <button className="carousel__button">
+    <button className="carousel__button" onClick={moveSlide}>
       <img src={process.env.PUBLIC_URL + '/assets/icons/icon-right-carousel.svg'} alt="arrow right" />
     </button>
   );

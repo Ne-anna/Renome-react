@@ -1,3 +1,4 @@
+import React from 'react';
 import './about.scss';
 import Grid from 'src/Components/Molecules/grid-image/grid';
 import jsonFile from 'src/db.json';

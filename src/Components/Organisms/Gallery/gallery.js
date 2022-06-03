@@ -1,4 +1,5 @@
-import './gallery.scss'
+import React from 'react';
+import './gallery.scss';
 import GalleryImages from 'src/Components/Molecules/gallery-images/gallery-images';
 
 const Gallery = (props) => {
@@ -10,5 +11,5 @@ const Gallery = (props) => {
         </div>
     );
 }
- 
+
 export default Gallery;
