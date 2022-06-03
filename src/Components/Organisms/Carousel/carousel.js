@@ -11,11 +11,11 @@ const Carousel = () => {
   const [slideIndex, setSlideIndex] = useState(1)
   const [slideDirection, setSlideDirection] = useState("right")
   const [prevSlide, setPrevSlide] = useState(carousel.length)
-  const [blockedAnimation, setBlockedAnimation] = useState(false)
+  const [blockedAnimation, setBlockedAnimation] = useState(true)
 
   const nextSlide = () => {
     setSlideDirection("right")
-    setBlockedAnimation(true)
+    setBlockedAnimation(false)
     if (slideIndex !== carousel.length) {
       setSlideIndex(slideIndex + 1)
       setPrevSlide(slideIndex)
@@ -27,7 +27,7 @@ const Carousel = () => {
 
   const previousSlide = () => {
     setSlideDirection("left")
-    setBlockedAnimation(true)
+    setBlockedAnimation(false)
     if (slideIndex !== 1) {
       setSlideIndex(slideIndex - 1)
       setPrevSlide(slideIndex)

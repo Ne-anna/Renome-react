@@ -39,9 +39,16 @@
   }
 }
 
+.carousel__animation--blocked {
+  display: unset;
+}
+
+.carousel__animation--active {
+  display: none;
+}
+
 .carousel__item {
   position: absolute;
-  display: none;
   width: 100%;
   opacity: 1;
 }
