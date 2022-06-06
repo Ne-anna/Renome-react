@@ -7,21 +7,61 @@ import Hamburger from "src/Components/Atoms/buttons/hamburger-button/hamburger";
 const Navigation = () => {
     const navigation = jsonFile.navigation;
 
-    const [isopenCart, setOpenCart] = useState(false);
-
-    const openCart = () => {
-        setOpenCart(!isopenCart);
-    };
+    const [isOpenCart, setOpenCart] = useState(false);
+    const [isActive, setActive] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
 
     const cartRef = useRef();
+    const wrapperRef = useRef();
+
+    const openCart = () => {
+        setOpenCart(!isOpenCart);
+    };
+
+    const toggleClass = () => {
+        setActive(!isActive);
+        if (isClicked) {
+            setActive(false);
+            setIsClicked(false);
+        }
+    };
+
+    const openSubMenu = () => {
+        setIsClicked(true);
+        setActive(false);
+    };
+
+    const closeSubMenu = () => {
+        setIsClicked(false);
+        setActive(true);
+    };
+
     useEffect(() => {
-        const closeMenu = (e) => {
+        const closeCart = (e) => {
             if (!cartRef.current?.contains(e.target)) {
                 setOpenCart(false);
             }
         };
-        document.body.addEventListener("mousedown", closeMenu);
+        document.body.addEventListener("mousedown", closeCart);
     }, [cartRef]);
+
+
+    useEffect(() => {
+        const closeMenu = (e) => {
+            if (!wrapperRef.current?.contains(e.target)) {
+                setActive(false);
+                setIsClicked(false);
+            }
+        };
+        document.body.addEventListener("mousedown", closeMenu);
+    }, [wrapperRef]);
+
+
+    if (isActive || isClicked || isOpenCart) {
+        document.body.style.overflow = "hidden";
+    } else {
+        document.body.style.overflow = "unset";
+    }
 
     return (
         <nav>
@@ -44,8 +84,19 @@ const Navigation = () => {
                     src={navigation.dividerPath}
                     alt={navigation.altTagDivider}
                 />
-                <Hamburger />
-                {isopenCart && <CartDropDown />}
+                <Hamburger
+                    toggleClass={toggleClass}
+                    closeSubMenu={closeSubMenu}
+                    openSubMenu={openSubMenu}
+                    isClicked={isClicked}
+                    setIsClicked={setIsClicked}
+                    setActive={setActive}
+                    isActive={isActive}
+                    wrapperRef={wrapperRef}
+                />
+                {isOpenCart &&
+                    <CartDropDown />
+                }
             </div>
         </nav>
     );
