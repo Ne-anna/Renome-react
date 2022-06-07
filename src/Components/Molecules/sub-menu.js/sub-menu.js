@@ -3,31 +3,33 @@ import jsonFile from "src/db.json";
 import SubMenuBack from "src/Components/Atoms/buttons/submenu-back-button/submenu-back";
 import "./sub-menu.scss";
 
-const SubMenu = (props) => {
+const SubMenu = ({ subMenuClose }) => {
     const menu = jsonFile.menu;
     const backButton = jsonFile.backButtonTitle;
 
     return (
         <div className="sub-navigation">
             <div className="sub-navigation__item--back">
-                <div onClick={props.subMenuClose}>
+                <div onClick={subMenuClose}>
                     <SubMenuBack />
                 </div>
-                <p className="sub-navigation__text--back" onClick={props.subMenuClose}>
+                <p className="sub-navigation__text--back" onClick={subMenuClose}>
                     {backButton.title}
                 </p>
             </div>
-            {menu.map((post) => {
+            {menu.map((post, indexA) => {
                 return typeof post.subMenu == "object" ? (
-                    <>
-                        {post.subMenu.map((post) => (
-                            <div className="sub-navigation__item">
+                    <div key={indexA}>
+
+                        {post.subMenu.map((post, indexB) => (
+                            <div className="sub-navigation__item" key={indexB}>
                                 <p className="sub-navigation__text">
                                     {post.title}
                                 </p>
                             </div>
                         ))}
-                    </>
+
+                    </div>
                 ) : null;
             })}
         </div>
