@@ -17,12 +17,12 @@ const SubMenu = ({ subMenuClose }) => {
                     {backButton.title}
                 </p>
             </div>
-            {menu.map((post, indexA) => {
+            {menu.map((post, menuIndex) => {
                 return typeof post.subMenu == "object" ? (
-                    <div key={indexA}>
+                    <div key={menuIndex}>
 
-                        {post.subMenu.map((post, indexB) => (
-                            <div className="sub-navigation__item" key={indexB}>
+                        {post.subMenu.map((post, subMenuIndex) => (
+                            <div className="sub-navigation__item" key={subMenuIndex}>
                                 <p className="sub-navigation__text">
                                     {post.title}
                                 </p>
