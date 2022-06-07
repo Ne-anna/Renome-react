@@ -4,11 +4,11 @@ import jsonFile from "src/db.json";
 import FeaturesNext from "src/Components/Atoms/buttons/features-next-button/features-next";
 import Search from "src/Components/Atoms/buttons/search-button/search-button";
 
-const Menu = (props) => {
+const Menu = ({ subMenuOpen }) => {
     const menu = jsonFile.menu;
 
     return (
-        <div className={`navigation__menu`}>
+        <div className="navigation__menu">
             {menu.map((post, index) => {
                 return (
                     <li
@@ -34,7 +34,7 @@ const Menu = (props) => {
                             </a>
                         )}
                         {post.isSubMenu && (
-                            <div onClick={props.subMenuOpen}>
+                            <div onClick={subMenuOpen}>
                                 <FeaturesNext />
                             </div>
                         )}
