@@ -17,6 +17,7 @@ const Navigation = () => {
 
     const openCart = () => {
         setMainMenuOpen(false)
+        setSubMenuOpen(false)
         setOpenCart(!isOpenCart);
     };
 
