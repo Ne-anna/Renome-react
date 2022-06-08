@@ -18,9 +18,11 @@ function App() {
       <header>
         <Navigation />
       </header>
-      <Carousel carousel={carousel} />
-      <About articles={articles} />
-      <Gallery gallery={gallery} />
+      <main>
+        <Carousel carousel={carousel} />
+        <About articles={articles} />
+        <Gallery gallery={gallery} />
+      </main>
       <footer>
         <Footer footer={footer} />
       </footer>
