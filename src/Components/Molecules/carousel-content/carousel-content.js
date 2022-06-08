@@ -13,18 +13,22 @@ const CarouselComponent = ({
         return (
           <div
             className={`carousel__item ${index < 1 && blockAnimation
-                ? "carousel__animation--blocked"
-                : slideIndex === index + 1
-                  ? "active-" + slideDirection
-                  : prevSlide === index + 1
-                    ? "carousel__item--" + slideDirection
-                    : "carousel__animation--active"
+              ? "carousel__animation--blocked"
+              : slideIndex === index + 1
+                ? "active-" + slideDirection
+                : prevSlide === index + 1
+                  ? "carousel__item--" + slideDirection
+                  : "carousel__animation--active"
               } `}
             key={index}
           >
             <div className="carousel__text">
-              <h2 className="carousel__title">{post.title}</h2>
-              <h5 className="carousel__subtitle">{post.subTitle}</h5>
+              <h2 className="carousel__title">
+                {post.title}
+              </h2>
+              <h5 className="carousel__subtitle">
+                {post.subTitle}
+              </h5>
             </div>
             <div className="carousel__image">
               <img src={post.path} alt={post.altTag} />
