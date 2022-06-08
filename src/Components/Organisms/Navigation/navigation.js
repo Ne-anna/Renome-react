@@ -10,33 +10,33 @@ const Navigation = () => {
     const navigation = jsonFile.navigation;
 
     const [isOpenCart, setOpenCart] = useState(false);
-    const [isMenuActive, setMenuActive] = useState(false);
+    const [isMainMenuOpen, setMainMenuOpen] = useState(false);
     const [isSubMenuOpen, setSubMenuOpen] = useState(false);
 
     const Ref = useRef();
 
     const openCart = () => {
-        setMenuActive(false)
+        setMainMenuOpen(false)
         setOpenCart(!isOpenCart);
     };
 
     const openMenu = () => {
-        setMenuActive(!isMenuActive);
+        setMainMenuOpen(!isMainMenuOpen);
         setOpenCart(false)
         if (isSubMenuOpen) {
-            setMenuActive(false);
+            setMainMenuOpen(false);
             setSubMenuOpen(false);
         }
     };
 
     const openSubMenu = () => {
         setSubMenuOpen(true);
-        setMenuActive(false);
+        setMainMenuOpen(false);
     };
 
     const closeSubMenu = () => {
         setSubMenuOpen(false);
-        setMenuActive(true);
+        setMainMenuOpen(true);
     };
 
     useEffect(() => {
@@ -45,14 +45,14 @@ const Navigation = () => {
                 setOpenCart(false);
             }
             if (!Ref.current?.contains(e.target)) {
-                setMenuActive(false);
+                setMainMenuOpen(false);
                 setSubMenuOpen(false);
             }
         };
         document.body.addEventListener("mousedown", closeWithOutsideClick);
     }, [Ref]);
 
-    if (isMenuActive || isSubMenuOpen || isOpenCart) {
+    if (isMainMenuOpen || isSubMenuOpen || isOpenCart) {
         document.body.style.overflow = "hidden";
     } else {
         document.body.style.overflow = "unset";
@@ -79,7 +79,7 @@ const Navigation = () => {
                     alt={navigation.altTagDivider}
                 />
                 <div
-                    className={`navigation__hamburger${isMenuActive
+                    className={`navigation__hamburger${isMainMenuOpen
                         ? " active"
                         : isSubMenuOpen
                             ? " active" : ""
@@ -93,7 +93,7 @@ const Navigation = () => {
                     <CartDropDown
                     />
                 }
-                {isMenuActive &&
+                {isMainMenuOpen &&
                     <Menu
                         subMenuOpen={openSubMenu}
                     />
