@@ -22,7 +22,12 @@ const CarouselComponent = ({
               } `}
             key={index}
           >
-            <div className="carousel__text">
+            <div className={`carousel__text ${index < 1 && blockAnimation
+              ? "carousel__animation--blocked"
+              : slideIndex === index + 1
+                ? "active__text-" + slideDirection
+                : "carousel__animation--active"
+              } `}>
               <h2 className="carousel__title">
                 {post.title}
               </h2>

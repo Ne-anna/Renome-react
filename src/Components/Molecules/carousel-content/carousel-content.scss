@@ -84,6 +84,14 @@
   @include text;
 }
 
+.active__text-right {
+  animation: fadeVisibilityRight 1s;
+}
+
+.active__text-left {
+  animation: fadeVisibilityLeft 1s;
+}
+
 .carousel__title {
   font-family: $axis;
   color: $white;
