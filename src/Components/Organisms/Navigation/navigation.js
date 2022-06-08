@@ -1,36 +1,70 @@
 import "./navigation.scss";
 import jsonFile from "src/db.json";
 import React, { useState, useRef, useEffect } from "react";
+import Menu from "src/Components/Molecules/menu/menu";
+import SubMenu from "src/Components/Molecules/sub-menu.js/sub-menu";
 import CartDropDown from "src/Components/Molecules/Cart-drop-down/cart-drop-down";
 import Hamburger from "src/Components/Atoms/buttons/hamburger-button/hamburger";
 
 const Navigation = () => {
     const navigation = jsonFile.navigation;
 
-    const [isopenCart, setOpenCart] = useState(false);
+    const [isOpenCart, setOpenCart] = useState(false);
+    const [isMainMenuOpen, setMainMenuOpen] = useState(false);
+    const [isSubMenuOpen, setSubMenuOpen] = useState(false);
+
+    const Ref = useRef();
 
     const openCart = () => {
-        setOpenCart(!isopenCart);
+        setMainMenuOpen(false)
+        setOpenCart(!isOpenCart);
     };
 
-    const cartRef = useRef();
+    const openMenu = () => {
+        setMainMenuOpen(!isMainMenuOpen);
+        setOpenCart(false)
+        if (isSubMenuOpen) {
+            setMainMenuOpen(false);
+            setSubMenuOpen(false);
+        }
+    };
+
+    const openSubMenu = () => {
+        setSubMenuOpen(true);
+        setMainMenuOpen(false);
+    };
+
+    const closeSubMenu = () => {
+        setSubMenuOpen(false);
+        setMainMenuOpen(true);
+    };
+
     useEffect(() => {
-        const closeMenu = (e) => {
-            if (!cartRef.current?.contains(e.target)) {
+        const closeWithOutsideClick = (e) => {
+            if (!Ref.current?.contains(e.target)) {
                 setOpenCart(false);
             }
+            if (!Ref.current?.contains(e.target)) {
+                setMainMenuOpen(false);
+                setSubMenuOpen(false);
+            }
         };
-        document.body.addEventListener("mousedown", closeMenu);
-    }, [cartRef]);
+        document.body.addEventListener("mousedown", closeWithOutsideClick);
+    }, [Ref]);
+
+    if (isMainMenuOpen || isSubMenuOpen || isOpenCart) {
+        document.body.style.overflow = "hidden";
+    } else {
+        document.body.style.overflow = "unset";
+    }
 
     return (
         <nav>
             <h2 className="navigation--left">
                 {navigation.logo}
             </h2>
-            <div className="navigation--right">
+            <div className="navigation--right" ref={Ref}>
                 <img
-                    ref={cartRef}
                     className="navigation__cart"
                     src={navigation.cartPath}
                     alt={navigation.altTagCart}
@@ -44,8 +78,31 @@ const Navigation = () => {
                     src={navigation.dividerPath}
                     alt={navigation.altTagDivider}
                 />
-                <Hamburger />
-                {isopenCart && <CartDropDown />}
+                <div
+                    className={`navigation__hamburger${isMainMenuOpen
+                        ? " active"
+                        : isSubMenuOpen
+                            ? " active" : ""
+                        }`}
+                >
+                    <Hamburger
+                        toggleClass={openMenu}
+                    />
+                </div>
+                {isOpenCart &&
+                    <CartDropDown
+                    />
+                }
+                {isMainMenuOpen &&
+                    <Menu
+                        subMenuOpen={openSubMenu}
+                    />
+                }
+                {isSubMenuOpen &&
+                    <SubMenu
+                        subMenuClose={closeSubMenu}
+                    />
+                }
             </div>
         </nav>
     );

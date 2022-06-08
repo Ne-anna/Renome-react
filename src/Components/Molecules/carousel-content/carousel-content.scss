@@ -55,13 +55,13 @@
 }
 
 .carousel__item--right {
-  animation: slideToRight 2s;
+  animation: slideToRight 0.5s;
   display: block;
   left: -100%;
 }
 
 .carousel__item--left {
-  animation: slideToLeft 2s;
+  animation: slideToLeft 0.5s;
   display: block;
   right: -100%;
 }
@@ -70,14 +70,14 @@
   opacity: 1;
   display: block;
   z-index: 1;
-  animation: fadeVisibilityRight 2s;
+  animation: fadeVisibilityRight 0.5s;
 }
 
 .active-left {
   opacity: 1;
   display: block;
   z-index: 1;
-  animation: fadeVisibilityLeft 2s;
+  animation: fadeVisibilityLeft 0.5s;
 }
 
 .carousel__text {

@@ -40,11 +40,18 @@ const Carousel = () => {
   return (
     <div className="carousel">
       <div className="carousel__slider">
-        <CarouselComponent carousel={carousel} prevSlide={prevSlide} slideIndex={slideIndex} slideDirection={slideDirection} blockAnimation={blockedAnimation} />
+        <CarouselComponent
+          carousel={carousel}
+          prevSlide={prevSlide}
+          slideIndex={slideIndex}
+          slideDirection={slideDirection}
+          blockAnimation={blockedAnimation} />
       </div>
       <div className="carousel__navigation">
-        <CarouselPreviousButton moveSlide={previousSlide} />
-        <CarouselNextButton moveSlide={nextSlide} />
+        <CarouselPreviousButton
+          moveSlide={previousSlide} />
+        <CarouselNextButton
+          moveSlide={nextSlide} />
       </div>
     </div>
   );
