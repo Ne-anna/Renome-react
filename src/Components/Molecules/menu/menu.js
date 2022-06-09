@@ -25,8 +25,8 @@ const Menu = ({ subMenuOpen }) => {
                                 <input
                                     className="navigation__input--search"
                                     placeholder={post.title}
-                                />{" "}
-                                <Search />{" "}
+                                />
+                                <Search />
                             </>
                         ) : (
                             <a className="navigation__link" href={post.url}>
