@@ -12,6 +12,7 @@ const Menu = ({ subMenuOpen }) => {
             {menu.map((post, index) => {
                 return (
                     <li
+                        onClick={subMenuOpen}
                         className={`navigation__item ${post.isSubMenu
                             ? "navigation__item--features"
                             : post.title === "Search"
