@@ -8,8 +8,8 @@ const SubMenu = ({ subMenuClose }) => {
     const backButton = jsonFile.backButtonTitle;
 
     return (
-        <div className="sub-navigation" onClick={subMenuClose}>
-            <div className="sub-navigation__item--back">
+        <div className="sub-navigation">
+            <div className="sub-navigation__item--back" onClick={subMenuClose}>
                 <div>
                     <SubMenuBack />
                 </div>
