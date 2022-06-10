@@ -12,7 +12,6 @@ const Menu = ({ subMenuOpen }) => {
             {menu.map((post, index) => {
                 return (
                     <li
-                        onClick={subMenuOpen}
                         className={`navigation__item ${post.isSubMenu
                             ? "navigation__item--features"
                             : post.title === "Search"
@@ -29,11 +28,19 @@ const Menu = ({ subMenuOpen }) => {
                                 />
                                 <Search />
                             </>
-                        ) : (
-                            <a className="navigation__link" href={post.url}>
-                                {post.title}
-                            </a>
-                        )}
+                        ) : post.title === "Features" ? (
+                            <div className="navigation__item--features" onClick={subMenuOpen}>
+                                <a className="navigation__link" href={post.url} >
+                                    {post.title}
+                                </a>
+                            </div>
+                        )
+                            : (
+                                <a className="navigation__link" href={post.url}>
+                                    {post.title}
+                                </a>
+                            )
+                        }
                         {post.isSubMenu && (
                             <div onClick={subMenuOpen}>
                                 <FeaturesNext />

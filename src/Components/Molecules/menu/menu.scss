@@ -18,6 +18,7 @@
   border-top: solid 1px $lightgrey;
   display: flex;
   list-style: none;
+  overflow-y: auto;
 
   &:hover {
     color: $brown;
@@ -32,7 +33,6 @@
 
   &--features {
     width: 100%;
-    border-top: solid 1px $lightgrey;
     display: flex;
     justify-content: space-between;
     align-items: center;
