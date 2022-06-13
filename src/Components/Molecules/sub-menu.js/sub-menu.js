@@ -9,8 +9,8 @@ const SubMenu = ({ subMenuClose }) => {
 
     return (
         <div className="sub-navigation">
-            <div className="sub-navigation__item--back">
-                <div onClick={subMenuClose}>
+            <div className="sub-navigation__item--back" onClick={subMenuClose}>
+                <div>
                     <SubMenuBack />
                 </div>
                 <p className="sub-navigation__text--back" onClick={subMenuClose}>

@@ -9,21 +9,21 @@ import Hamburger from "src/Components/Atoms/buttons/hamburger-button/hamburger";
 const Navigation = () => {
     const navigation = jsonFile.navigation;
 
-    const [isOpenCart, setOpenCart] = useState(false);
+    const [isCartOpen, setCartOpen] = useState(false);
     const [isMainMenuOpen, setMainMenuOpen] = useState(false);
     const [isSubMenuOpen, setSubMenuOpen] = useState(false);
 
     const Ref = useRef();
 
-    const openCart = () => {
+    const toggleCart = () => {
         setMainMenuOpen(false)
         setSubMenuOpen(false)
-        setOpenCart(!isOpenCart);
+        setCartOpen(!isCartOpen);
     };
 
-    const openMenu = () => {
+    const toggleMenu = () => {
         setMainMenuOpen(!isMainMenuOpen);
-        setOpenCart(false)
+        setCartOpen(false)
         if (isSubMenuOpen) {
             setMainMenuOpen(false);
             setSubMenuOpen(false);
@@ -43,7 +43,7 @@ const Navigation = () => {
     useEffect(() => {
         const closeWithOutsideClick = (e) => {
             if (!Ref.current?.contains(e.target)) {
-                setOpenCart(false);
+                setCartOpen(false);
             }
             if (!Ref.current?.contains(e.target)) {
                 setMainMenuOpen(false);
@@ -53,7 +53,7 @@ const Navigation = () => {
         document.body.addEventListener("mousedown", closeWithOutsideClick);
     }, [Ref]);
 
-    if (isMainMenuOpen || isSubMenuOpen || isOpenCart) {
+    if (isMainMenuOpen || isSubMenuOpen || isCartOpen) {
         document.body.style.overflow = "hidden";
     } else {
         document.body.style.overflow = "unset";
@@ -69,7 +69,7 @@ const Navigation = () => {
                     className="navigation__cart"
                     src={navigation.cartPath}
                     alt={navigation.altTagCart}
-                    onClick={openCart}
+                    onClick={toggleCart}
                 />
                 <p className="navigation__count">
                     {navigation.count}
@@ -87,10 +87,10 @@ const Navigation = () => {
                         }`}
                 >
                     <Hamburger
-                        toggleClass={openMenu}
+                        toggleClass={toggleMenu}
                     />
                 </div>
-                {isOpenCart &&
+                {isCartOpen &&
                     <CartDropDown
                     />
                 }
