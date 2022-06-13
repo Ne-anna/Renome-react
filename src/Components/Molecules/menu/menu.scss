@@ -11,6 +11,14 @@
   background-color: $white;
   transition: 0.3s ease;
   top: 50px;
+  scroll-snap-type: y;
+  overflow-y: auto;
+}
+
+@media screen and (min-width: 450px) and (max-height: 500px) {
+  .navigation__menu--scroll {
+    height: calc(100vh - 50px);
+  }
 }
 
 .navigation__item {
