@@ -21,7 +21,7 @@ const Grid = () => {
     }, [])
 
     return (
-        <div className="about__image-grid" id="app">
+        <div className="about__image-grid">
             <img src="" alt="" className="about__back-image" id="bottom" />
             <img src="" alt="" className="about__front-image" id="top" />
         </div>
