@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './grid.scss';
 
-const Grid = (props) => {
+const Grid = () => {
 
     const getData = async () => {
         const requestURL = "https://raw.githubusercontent.com/Ne-anna/Renome-react/main/src/db.json";
