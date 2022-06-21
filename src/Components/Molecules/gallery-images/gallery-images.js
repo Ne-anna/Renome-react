@@ -1,15 +1,31 @@
-import React from 'react';
-import jsonFIle from 'src/db.json';
+import React, { useState, useEffect } from 'react';
 import './gallery-images.scss'
+
 const GalleryImages = () => {
-    const GalleryImages = jsonFIle.gallery.galleryImages;
+
+    const [items, setItems] = useState([]);
+
+    const getData = async () => {
+
+        const requestURL = "https://raw.githubusercontent.com/Ne-anna/Renome-react/main/src/db.json";
+        const request = new Request(requestURL);
+        await fetch(request)
+            .then((response) => response.json())
+            .then((data) => {
+                setItems(data.gallery.galleryImages);
+            });
+    };
+
+    useEffect(() => {
+        getData()
+    }, [])
 
     return (
         <div className="gallery__image-container">
             {
-                GalleryImages.map((post, index) => {
+                items.map((items, index) => {
                     return (
-                        <img src={post.path} alt={post.altTag} key={index} />
+                        <img src={items.path} alt={items.altTag} key={index} />
                     )
                 })
             }
