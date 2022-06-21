@@ -1,9 +1,11 @@
 .footer__social-media {
   display: flex;
   justify-content: center;
-  gap: 8px;
 }
 
 .footer__icon {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
   width: 30px;
 }
