@@ -1,29 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './grid.scss';
 
-const Grid = () => {
-
-    const [items, setItems] = useState([]);
-
-    const getData = async () => {
-
-        const requestURL = "https://raw.githubusercontent.com/Ne-anna/Renome-react/main/src/db.json";
-        const request = new Request(requestURL);
-        await fetch(request)
-            .then((response) => response.json())
-            .then((data) => {
-                setItems(data.about.images);
-            });
-    };
-
-    useEffect(() => {
-        getData()
-    }, [])
+const Grid = (props) => {
 
     return (
         <div className="about__image-grid">
-            <img src={items.top} alt={items.altTagBack} className="about__back-image" />
-            <img src={items.bottom} alt={items.altTagFront} className="about__front-image" />
+            <img src={props.data && props.data.top} alt={props.data && props.data.altTagBack} className="about__back-image" />
+            <img src={props.data && props.data.bottom} alt={props.data && props.data.altTagFront} className="about__front-image" />
         </div>
     );
 }

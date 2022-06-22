@@ -1,29 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import './about.scss';
+import getData from '../../../fetchlist.js'
 import Grid from 'src/Components/Molecules/grid-image/grid';
 
 const About = () => {
 
-    const [items, setItems] = useState([]);
-
-    const getData = async () => {
-
-        const requestURL = "https://raw.githubusercontent.com/Ne-anna/Renome-react/main/src/db.json";
-        const request = new Request(requestURL);
-        await fetch(request)
-            .then((response) => response.json())
-            .then((data) => {
-                setItems(data.about);
-            });
-    };
+     const [items, setItems] = useState([]);
 
     useEffect(() => {
         getData()
+            .then(items => setItems(items.about))
     }, [])
 
     return (
         <div className="about-container">
-            <Grid />
+            <Grid data = {items.images}/>
             <div className="about">
                 <h1 className="about__title" id="title">
                     {items.title}

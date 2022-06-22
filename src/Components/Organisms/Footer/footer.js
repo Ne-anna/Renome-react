@@ -1,31 +1,23 @@
 import FooterIcons from 'src/Components/Molecules/footer-icons/footer-icons';
 import '../Footer/footer.scss';
+import getData from '../../../fetchlist.js'
 import React, { useEffect, useState } from 'react';
 
 const Footer = () => {
 
-    const [items, setItems] = useState([]);
-
-    const getData = async () => {
-
-        const requestURL = "https://raw.githubusercontent.com/Ne-anna/Renome-react/main/src/db.json";
-        const request = new Request(requestURL);
-        await fetch(request)
-            .then((response) => response.json())
-            .then((data) => {
-                setItems(data.footer);
-            });
-    };
+      const [items, setItems] = useState([]);
 
     useEffect(() => {
         getData()
+            .then(items => setItems(items.footer))
     }, [])
+
     return (
         <div className="footer">
             <h5 className="footer__title" id="footerTitle">
                 {items.title}
             </h5>
-            <FooterIcons />
+            <FooterIcons data = {items.footerIcons}/>
             <h2 className="footer__logo" id="logo">
                 {items.logo}
             </h2>
@@ -33,7 +25,6 @@ const Footer = () => {
                 {items.copyright}
             </h5>
         </div>
-
     );
 }
 
