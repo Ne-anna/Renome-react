@@ -1,13 +1,11 @@
 import React from 'react';
-import jsonFile from "src/db.json";
 import "./cart-drop-down.scss";
 
-const CartDropDown = () => {
-    const cart = jsonFile.cart;
+const CartDropDown = (props) => {
 
     return (
         <div className="cart">
-            {cart.map((post, index) => {
+            {props.cartData && props.cartData.map((post, index) => {
                 return (
                     <div className="cart__item" key={index}>
                         <p className="cart__text">

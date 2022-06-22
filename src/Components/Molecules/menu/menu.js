@@ -1,17 +1,15 @@
 import React from 'react';
 import "./menu.scss";
-import jsonFile from "src/db.json";
 import FeaturesNext from "src/Components/Atoms/buttons/features-next-button/features-next";
 import Search from "src/Components/Atoms/buttons/search-button/search-button";
 
-const Menu = ({ subMenuOpen }) => {
-    const menu = jsonFile.menu;
+const Menu = (props) => {
 
     return (
 
         <div className="navigation__menu">
             <div className="navigation__menu--scroll">
-                {menu.map((post, index) => {
+                {props.menuData && props.menuData.map((post, index) => {
                     return (
                         <li
                             className={`navigation__item ${post.isSubMenu
@@ -31,7 +29,7 @@ const Menu = ({ subMenuOpen }) => {
                                     <Search />
                                 </>
                             ) : post.title === "Features" ? (
-                                <div className="navigation__item--features" onClick={subMenuOpen}>
+                                <div className="navigation__item--features" onClick={props.subMenuOpen}>
                                     <a className="navigation__link" href={post.url} >
                                         {post.title}
                                     </a>
@@ -44,7 +42,7 @@ const Menu = ({ subMenuOpen }) => {
                                 )
                             }
                             {post.isSubMenu && (
-                                <div onClick={subMenuOpen}>
+                                <div onClick={props.subMenuOpen}>
                                     <FeaturesNext />
                                 </div>
                             )}
