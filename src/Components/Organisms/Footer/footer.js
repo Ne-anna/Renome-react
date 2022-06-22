@@ -1,28 +1,20 @@
 import FooterIcons from 'src/Components/Molecules/footer-icons/footer-icons';
 import '../Footer/footer.scss';
-import getData from '../../../fetchlist.js'
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-const Footer = () => {
-
-      const [items, setItems] = useState([]);
-
-    useEffect(() => {
-        getData()
-            .then(items => setItems(items.footer))
-    }, [])
+const Footer = (props) => {
 
     return (
         <div className="footer">
             <h5 className="footer__title" id="footerTitle">
-                {items.title}
+                {props.data && props.data.title}
             </h5>
-            <FooterIcons data = {items.footerIcons}/>
+            <FooterIcons data = {props.data && props.data.footerIcons}/>
             <h2 className="footer__logo" id="logo">
-                {items.logo}
+                {props.data && props.data.logo}
             </h2>
             <h5 className="footer__copyright" id="copyright">
-                {items.copyright}
+                {props.data && props.data.copyright}
             </h5>
         </div>
     );

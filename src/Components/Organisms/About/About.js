@@ -1,29 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './about.scss';
-import getData from '../../../fetchlist.js'
 import Grid from 'src/Components/Molecules/grid-image/grid';
 
-const About = () => {
-
-     const [items, setItems] = useState([]);
-
-    useEffect(() => {
-        getData()
-            .then(items => setItems(items.about))
-    }, [])
+const About = (props) => {
 
     return (
         <div className="about-container">
-            <Grid data = {items.images}/>
+            <Grid data = {props.data && props.data.images}/>
             <div className="about">
                 <h1 className="about__title" id="title">
-                    {items.title}
+                    {props.data && props.data.title}
                 </h1>
                 <h5 className="about__subtitle" id="subtitle">
-                    {items.subTitle}
+                    {props.data && props.data.subTitle}
                 </h5>
                 <p className="about__paragraph" id="text">
-                    {items.text}
+                    {props.data && props.data.text}
                 </p>
             </div>
         </div>
