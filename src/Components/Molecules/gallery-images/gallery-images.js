@@ -1,18 +1,17 @@
 import React from 'react';
-import jsonFIle from 'src/db.json';
 import './gallery-images.scss'
-const GalleryImages = () => {
-    const GalleryImages = jsonFIle.gallery.galleryImages;
+
+const GalleryImages = (props) => {
 
     return (
         <div className="gallery__image-container">
             {
-                GalleryImages.map((post, index) => {
+                   props.data && props.data.map((items, index) => {
                     return (
-                        <img src={post.path} alt={post.altTag} key={index} />
+                        <img src={items.path} alt={items.altTag} key={index} />
                     )
-                })
-            }
+                    })
+                }
         </div>
     );
 }

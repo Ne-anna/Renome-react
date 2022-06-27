@@ -1,23 +1,21 @@
 import React from 'react';
 import './about.scss';
 import Grid from 'src/Components/Molecules/grid-image/grid';
-import jsonFile from 'src/db.json';
 
 const About = (props) => {
-    const images = jsonFile.about.images;
 
     return (
         <div className="about-container">
-            <Grid images={images} />
+            <Grid data = {props.data && props.data.images}/>
             <div className="about">
-                <h1 className="about__title">
-                    {props.articles.title}
+                <h1 className="about__title" id="title">
+                    {props.data && props.data.title}
                 </h1>
-                <h5 className="about__subtitle">
-                    {props.articles.subTitle}
+                <h5 className="about__subtitle" id="subtitle">
+                    {props.data && props.data.subTitle}
                 </h5>
-                <p className="about__paragraph">
-                    {props.articles.text}
+                <p className="about__paragraph" id="text">
+                    {props.data && props.data.text}
                 </p>
             </div>
         </div>

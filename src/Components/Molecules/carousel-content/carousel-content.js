@@ -1,31 +1,27 @@
 import "./carousel-content.scss";
 
-const CarouselComponent = ({
-  carousel,
-  slideIndex,
-  slideDirection,
-  prevSlide,
-  blockAnimation,
-}) => {
+const CarouselComponent = (
+  props
+) => {
   return (
     <div className={"carousel__container"}>
-      {carousel.map((post, index) => {
+      {props.data && props.data.map((post, index) => {
         return (
           <div
-            className={`carousel__item ${index < 1 && blockAnimation
+            className={`carousel__item ${index < 1 && props.blockAnimation
               ? "carousel__animation--blocked"
-              : slideIndex === index + 1
-                ? "active-" + slideDirection
-                : prevSlide === index + 1
-                  ? "carousel__item--" + slideDirection
+              : props.slideIndex === index + 1
+                ? "active-" + props.slideDirection
+                : props.prevSlide === index + 1
+                  ? "carousel__item--" + props.slideDirection
                   : "carousel__animation--active"
               } `}
             key={index}
           >
-            <div className={`carousel__text ${index < 1 && blockAnimation
+            <div className={`carousel__text ${index < 1 && props.blockAnimation
               ? "carousel__animation--blocked"
-              : slideIndex === index + 1
-                ? "active__text-" + slideDirection
+              : props.slideIndex === index + 1
+                ? "active__text-" + props.slideDirection
                 : "carousel__animation--active"
               } `}>
               <h2 className="carousel__title">

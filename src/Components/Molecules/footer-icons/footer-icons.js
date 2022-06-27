@@ -1,20 +1,18 @@
-import React from "react";
-import jsonFile from "src/db.json";
 import "../footer-icons/footer-icons.scss";
-const FooterIcons = () => {
-    const footerIcons = jsonFile.footer.footerIcons;
+import React from "react";
+
+const FooterIcons = (props) => {
 
     return (
         <div className="footer__social-media">
-            {footerIcons.map((post) => {
-                return (
-                    <div className="footer__icon" key={post.id}>
-                        <img src={post.icon} alt={post.altTag} />
-                    </div>
-                );
-            })}
+            <div className="footer__icon">
+                {props.data && props.data.map((items) => (
+                    <img key={items.id} src={items.icon} alt={items.altTag} />
+                ))}
+            </div>
         </div>
     );
+
 };
 
 export default FooterIcons;

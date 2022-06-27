@@ -1,23 +1,20 @@
 import React from 'react';
-import jsonFile from "src/db.json";
 import SubMenuBack from "src/Components/Atoms/buttons/submenu-back-button/submenu-back";
 import "./sub-menu.scss";
 
-const SubMenu = ({ subMenuClose }) => {
-    const menu = jsonFile.menu;
-    const backButton = jsonFile.backButtonTitle;
+const SubMenu = (props) => {
 
     return (
         <div className="sub-navigation">
-            <div className="sub-navigation__item--back" onClick={subMenuClose}>
+            <div className="sub-navigation__item--back" onClick={props.subMenuClose}>
                 <div>
                     <SubMenuBack />
                 </div>
-                <p className="sub-navigation__text--back" onClick={subMenuClose}>
-                    {backButton.title}
+                <p className="sub-navigation__text--back" onClick={props.subMenuClose}>
+                    {props.backButtonData.title}
                 </p>
             </div>
-            {menu.map((post, menuIndex) => {
+            {props.menuData && props.menuData.map((post, menuIndex) => {
                 return typeof post.subMenu == "object" ? (
                     <div key={menuIndex}>
 
