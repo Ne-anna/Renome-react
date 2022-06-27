@@ -5,7 +5,8 @@ import "./carousel.scss";
 import jsonFile from "src/db.json";
 import { useState } from "react";
 
-const Carousel = () => {
+const Carousel = (props) => {
+
   const carousel = jsonFile.carousel;
 
   const [slideIndex, setSlideIndex] = useState(1)
@@ -41,7 +42,7 @@ const Carousel = () => {
     <div className="carousel">
       <div className="carousel__slider">
         <CarouselComponent
-          carousel={carousel}
+          data={props.data && props.data}
           prevSlide={prevSlide}
           slideIndex={slideIndex}
           slideDirection={slideDirection}
